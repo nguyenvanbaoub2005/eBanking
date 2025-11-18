@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.vku.ebanking.server.ServerController"
+      spacing="15" style="-fx-background-color: #f8fafc;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Header -->
+    <VBox spacing="5" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+        <Label text="🏦 VKU eBanking Server" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+        <Label fx:id="statusLabel" text="🔴 Server đã dừng" style="-fx-font-size: 14px; -fx-text-fill: #ef4444;"/>
+    </VBox>
+
+    <!-- Control Panel -->
+    <HBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+        <Button fx:id="startButton" text="▶ Khởi động" onAction="#startServer"
+                style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-size: 14px;
+                       -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand;"/>
+        <Button fx:id="stopButton" text="⏹ Dừng" onAction="#stopServer"
+                style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-size: 14px;
+                       -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand;"/>
+        <Button text="🔄 Làm mới" onAction="#refreshAccounts"
+                style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-size: 14px;
+                       -fx-padding: 10 20; -fx-background-radius: 8; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Account Table -->
+    <VBox VBox.vgrow="ALWAYS" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+        <Label text="📊 Danh sách tài khoản" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+        <TableView fx:id="accountTable" VBox.vgrow="ALWAYS" style="-fx-background-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colAccountNumber" text="Số tài khoản" prefWidth="150"/>
+                <TableColumn fx:id="colAccountName" text="Tên tài khoản" prefWidth="200"/>
+                <TableColumn fx:id="colBalance" text="Số dư (₫)" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Log Area -->
+    <VBox VBox.vgrow="ALWAYS" spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+        <Label text="📝 Nhật ký hoạt động" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+        <TextArea fx:id="logArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"
+                  style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 12px;
+                         -fx-background-radius: 8; -fx-background-color: #f1f5f9;"/>
+    </VBox>
+</VBox>

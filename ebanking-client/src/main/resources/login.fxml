@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.vku.ebanking.client.LoginController"
+      alignment="CENTER" spacing="0"
+      style="-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);">
+
+    <VBox alignment="CENTER" spacing="25" maxWidth="380" style="-fx-background-color: white; -fx-background-radius: 25; -fx-padding: 40;">
+
+        <!-- Logo/Icon -->
+        <VBox alignment="CENTER" spacing="10">
+            <StackPane>
+                <Circle radius="50" style="-fx-fill: linear-gradient(to bottom right, #667eea, #764ba2);"/>
+                <Label text="🏦" style="-fx-font-size: 48px;"/>
+            </StackPane>
+            <Label text="VKU eBanking" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e293b;"/>
+            <Label text="Đăng nhập vào tài khoản" style="-fx-font-size: 14px; -fx-text-fill: #64748b;"/>
+        </VBox>
+
+        <!-- Input Fields -->
+        <VBox spacing="15">
+            <VBox spacing="8">
+                <Label text="Số tài khoản" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #475569;"/>
+                <TextField fx:id="accountField" promptText="Nhập số tài khoản"
+                           style="-fx-background-color: #f1f5f9; -fx-background-radius: 12; -fx-padding: 14;
+                                 -fx-font-size: 14px; -fx-border-color: transparent; -fx-border-width: 2;
+                                 -fx-border-radius: 12;"/>
+            </VBox>
+
+            <VBox spacing="8">
+                <Label text="Mã PIN" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #475569;"/>
+                <PasswordField fx:id="pinField" promptText="Nhập mã PIN"
+                               style="-fx-background-color: #f1f5f9; -fx-background-radius: 12; -fx-padding: 14;
+                                     -fx-font-size: 14px; -fx-border-color: transparent; -fx-border-width: 2;
+                                     -fx-border-radius: 12;"/>
+            </VBox>
+        </VBox>
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" wrapText="true" textAlignment="CENTER"
+               style="-fx-text-fill: #ef4444; -fx-font-size: 12px; -fx-padding: 10;
+                      -fx-background-color: #fee2e2; -fx-background-radius: 8;"/>
+
+        <!-- Login Button -->
+        <VBox spacing="10" alignment="CENTER">
+            <Button fx:id="loginButton" text="Đăng nhập" onAction="#login" maxWidth="Infinity"
+                    style="-fx-background-color: linear-gradient(to right, #667eea, #764ba2);
+                          -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;
+                          -fx-padding: 16; -fx-background-radius: 12; -fx-cursor: hand;
+                          -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.4), 10, 0, 0, 4);"/>
+
+            <ProgressIndicator fx:id="progressIndicator" prefWidth="40" prefHeight="40"/>
+
+            <Button text="Xóa" onAction="#clearFields"
+                    style="-fx-background-color: transparent; -fx-text-fill: #64748b;
+                          -fx-font-size: 13px; -fx-cursor: hand; -fx-underline: true;"/>
+        </VBox>
+
+        <!-- Info -->
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 10 0 0 0;">
+            <Label text="💡 Tài khoản demo" style="-fx-font-size: 11px; -fx-text-fill: #94a3b8; -fx-font-weight: bold;"/>
+            <Label text="01234 / 1234  •  12345 / 5678" style="-fx-font-size: 11px; -fx-text-fill: #cbd5e1; -fx-font-family: monospace;"/>
+        </VBox>
+
+    </VBox>
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+</VBox>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<accounts>
+    <account>
+        <accountNumber>01234</accountNumber>
+        <accountName>Nguyễn Văn Bảo</accountName>
+        <balance>112000.0</balance>
+        <pin>1234</pin>
+    </account>
+    <account>
+        <accountNumber>12345</accountNumber>
+        <accountName>Hồ Đức Huy</accountName>
+        <balance>89000.0</balance>
+        <pin>5678</pin>
+    </account>
+    <account>
+        <accountNumber>98765</accountNumber>
+        <accountName>Lê Văn C</accountName>
+        <balance>38000.0</balance>
+        <pin>9999</pin>
+    </account>
+    <account>
+        <accountNumber>11111</accountNumber>
+        <accountName>Phạm Thị D</accountName>
+        <balance>20000.0</balance>
+        <pin>0000</pin>
+    </account>
+</accounts>
